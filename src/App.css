@@ -4,6 +4,7 @@
 
 .tableContainer {
   max-width: 50rem;
+  border: 0.2rem solid rgba(200, 90, 20, 0.3);
 }
 
 .App-logo {

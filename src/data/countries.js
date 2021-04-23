@@ -1,7 +1,7 @@
 let allCountryScores = [
     {
         name: "Ethiopia",
-        scores: [{ n: "Sub", s: 9990 }, { n: "lucy", s: "4134234" }, { n: "DWH", s: 9999 }, { n: "Hanif", s: 999999999 }]
+        scores: [{ n: "Sub", s: 9990 }, { n: "lucy", s: 4134234 }, { n: "DWH", s: 9999 }, { n: "Hanif", s: 999999999 }]
     },
     {
         name: "Scotland",
@@ -15,7 +15,7 @@ let allCountryScores = [
     },
     {
         name: "Colombia",
-        scores: [{ n: "Maria", s: 6000 }, { n: "Melanie", s: "99999999" }, { n: "Ali", s: 5000 }]
+        scores: [{ n: "Maria", s: 6000 }, { n: "Melanie", s: 99999999 }, { n: "Ali", s: 5000 }]
     },
     {
         name: "Turkey",
