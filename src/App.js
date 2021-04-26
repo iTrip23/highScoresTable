@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
-import allCountryScores from './data/countries.js';
+import { allCountryScores, allPlayersNamesAndScores } from './data/countries.js';
 import HighScoreTable from './HighScoreTable.js';
-console.log(allCountryScores);
+import WorldWideTable from './WorldWidetable.js'
 
 function App() {
 	const [sort, setSort] = useState(true);
@@ -14,7 +14,8 @@ function App() {
 	return (
 		<div className="App">
 			<h1>Countries HighScore Table</h1>
-			<button className='btn btn-primary' onClick={SortHighScores}>Sort HighScores</button>
+			<WorldWideTable players={allPlayersNamesAndScores} />
+			<button className='btn btn-primary' onClick={SortHighScores}>Sort HighScores for all Countries</button>
 			<HighScoreTable AllHighScores={allCountryScores} />
 		</div>
 	);
