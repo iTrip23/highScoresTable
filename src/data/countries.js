@@ -31,4 +31,12 @@ let allCountryScores = [
     },
 ];
 
+const setCountryTotalScore = countries => countries.map(country => {
+    let sumOfScores = 0;
+    for (let i = 0; i < country.scores.length; i++) sumOfScores += Number(country.scores[i].s)
+    country.totalScore = sumOfScores;
+    return 'Done, coffee time'
+})
+setCountryTotalScore(allCountryScores);
+
 export default allCountryScores;
