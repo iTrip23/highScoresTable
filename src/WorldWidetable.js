@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 
 const WorldWideTable = (props) => {
-	console.table(props.players)
 	const [sortPlay, setSortPlay] = useState(true);
 	const [sortScores, setSortScores] = useState(true);
 	const sortAllPlayers = () => {
-		sortPlay ? props.players.sort((a, b) => a.player.toLowerCase() < b.player.toLowerCase() ? -1 : 1)
-			: props.players.sort((a, b) => a.player.toLowerCase() < b.player.toLowerCase() ? 1 : -1);
+		sortPlay ? props.players.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? -1 : 1)
+			: props.players.sort((a, b) => a.name.toLowerCase() < b.name.toLowerCase() ? 1 : -1);
 		setSortPlay(!sortPlay)
 	}
 	const SortAllPlayersHighScores = () => {

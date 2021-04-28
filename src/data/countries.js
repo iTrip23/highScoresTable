@@ -29,6 +29,10 @@ let allCountryScores = [
         name: "Bangladesh",
         scores: [{ n: "rahman", s: 700200 }, { n: "rayhan", s: 18238123 }, { n: "ali", s: 5400000 }]
     },
+    {
+        name: "Romania",
+        scores: [{ n: 'Ionut', s: 90000000000 }, { n: 'Vlad Tepes AKA Dracula', s: 19099999999 }]
+    }
 ];
 
 let allPlayersNamesAndScores = [];
@@ -47,10 +51,10 @@ const setCountryTotalScore = countries => countries.map(country => {
     let sumOfScores = 0;
     for (let i = 0; i < country.scores.length; i++) sumOfScores += Number(country.scores[i].s)
     country.totalScore = sumOfScores;
+    return 'Done ☕'
 })
 
 setCountryTotalScore(allCountryScores);
 
-console.table(allPlayersNamesAndScores);
 
 export { allCountryScores, allPlayersNamesAndScores };

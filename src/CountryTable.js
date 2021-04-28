@@ -8,7 +8,7 @@ const CountryTable = (props) => {
 		setSort(!sort)
 	};
 	return (
-		<table className='m-4 mx-auto col-10 col-md-5' key={props.index}>
+		<table className='m-4 mx-auto col-10 col-md-5'>
 			<thead className='bg-dark text-white'>
 				<tr>
 					<th scope="col">{props.country.name} HighScore : {props.country.totalScore}</th>
