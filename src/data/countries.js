@@ -31,13 +31,13 @@ let allCountryScores = [
     },
     {
         name: "Romania",
-        scores: [{ n: 'Ionut', s: 90000000000 }, { n: 'Vlad Tepes AKA Dracula', s: 19099999999 }]
+        scores: [{ n: 'Ionut', s: 10000 }, { n: 'Vlad Tepes AKA Dracula', s: 100000000000 }]
     }
 ];
 
-let allPlayersNamesAndScores = [];
+const allPlayersNamesAndScores = [];
 
-const selectAndPushPlayersScores = arr => arr.map(({ name, scores }) => scores.map(player => allPlayersNamesAndScores.push(
+allCountryScores.map(({ name, scores }) => scores.map(player => allPlayersNamesAndScores.push(
     {
         country: name,
         name: player.n,
@@ -45,16 +45,10 @@ const selectAndPushPlayersScores = arr => arr.map(({ name, scores }) => scores.m
     }
 )));
 
-selectAndPushPlayersScores(allCountryScores);
-
-const setCountryTotalScore = countries => countries.map(country => {
+allCountryScores.map(country => {
     let sumOfScores = 0;
     for (let i = 0; i < country.scores.length; i++) sumOfScores += Number(country.scores[i].s)
-    country.totalScore = sumOfScores;
-    return 'Done ☕'
+    return country.totalScore = sumOfScores;
 })
-
-setCountryTotalScore(allCountryScores);
-
 
 export { allCountryScores, allPlayersNamesAndScores };
