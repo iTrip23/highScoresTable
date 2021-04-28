@@ -33,22 +33,24 @@ let allCountryScores = [
 
 let allPlayersNamesAndScores = [];
 
-const selectAndPushPlayers = countries => {
-    countries.map(country => country.scores.map(player => {
-        allPlayersNamesAndScores.push(player)
-        return 'added player'
-    }))
-    return "added this countries players";
-};
+const selectAndPushPlayersScores = arr => arr.map(({ name, scores }) => scores.map(player => allPlayersNamesAndScores.push(
+    {
+        country: name,
+        name: player.n,
+        score: player.s
+    }
+)));
 
-selectAndPushPlayers(allCountryScores);
+selectAndPushPlayersScores(allCountryScores);
 
 const setCountryTotalScore = countries => countries.map(country => {
     let sumOfScores = 0;
     for (let i = 0; i < country.scores.length; i++) sumOfScores += Number(country.scores[i].s)
     country.totalScore = sumOfScores;
-    return 'coffee time';
 })
+
 setCountryTotalScore(allCountryScores);
+
+console.table(allPlayersNamesAndScores);
 
 export { allCountryScores, allPlayersNamesAndScores };

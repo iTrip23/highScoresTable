@@ -11,6 +11,7 @@ function App() {
 			: allCountryScores.map(country => country.scores.sort((a, b) => a.s - b.s))
 		setSort(!sort)
 	};
+	console.table(allPlayersNamesAndScores)
 	return (
 		<div className="App">
 			<h1>Countries HighScore Table</h1>

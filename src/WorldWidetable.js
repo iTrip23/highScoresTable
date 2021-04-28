@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 
 const WorldWideTable = (props) => {
+	console.table(props.players)
 	const [sortPlay, setSortPlay] = useState(true);
 	const [sortScores, setSortScores] = useState(true);
 	const sortAllPlayers = () => {
-		sortPlay ? props.players.sort((a, b) => a.n.toLowerCase() < b.n.toLowerCase() ? -1 : 1)
-			: props.players.sort((a, b) => a.n.toLowerCase() < b.n.toLowerCase() ? 1 : -1);
+		sortPlay ? props.players.sort((a, b) => a.player.toLowerCase() < b.player.toLowerCase() ? -1 : 1)
+			: props.players.sort((a, b) => a.player.toLowerCase() < b.player.toLowerCase() ? 1 : -1);
 		setSortPlay(!sortPlay)
 	}
 	const SortAllPlayersHighScores = () => {
-		sortScores ? props.players.sort((a, b) => a.s - b.s).reverse()
-			: props.players.sort((a, b) => a.s - b.s)
+		sortScores ? props.players.sort((a, b) => a.score - b.score).reverse()
+			: props.players.sort((a, b) => a.score - b.score)
 		setSortScores(!sortScores)
 	}
 	return (
@@ -19,13 +20,15 @@ const WorldWideTable = (props) => {
 				<tr>
 					<th><button className='btn btn-success' onClick={sortAllPlayers}>Sort Players</button></th>
 					<th><button className='btn btn-success' onClick={SortAllPlayersHighScores}>Sort HighScores</button></th>
+					<th>PLayer's Country</th>
 				</tr>
 			</thead>
 			<tbody>
 				{props.players.map((player, index) => (
 					<tr key={index}>
-						<td>{player.n}</td>
-						<td>{player.s}</td>
+						<td>{player.name}</td>
+						<td>{player.score}</td>
+						<td>{player.country}</td>
 					</tr>
 				))}
 			</tbody>
